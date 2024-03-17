@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ethereum Balance Checker</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
+      type="application/javascript"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Ethereum Balance Checker</h2>
+      <p>
+        This web-based application allows you to upload a CSV file containing
+        Ethereum addresses (in a column named "address") to retrieve and display
+        their ETH balances in both ETH and USD. <br /><br />The current ETH
+        price is fetched from CoinGecko, and the results are provided in a
+        downloadable CSV file. The app efficiently processes multiple addresses
+        and handles invalid ones without interrupting the operation.
+      </p>
+      <input type="file" id="csvFileInput" accept=".csv" />
+      <div class="button-container">
+        <button id="processButton" onclick="processAddresses()" disabled>
+          Process Addresses
+        </button>
+        <button id="clearLogButton" onclick="clearLogs()" disabled>
+          Clear Logs
+        </button>
+      </div>
+      <div id="ethPrice"></div>
+      <div id="log"></div>
+      <a id="downloadLink" style="display: none">Download Output CSV</a>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
